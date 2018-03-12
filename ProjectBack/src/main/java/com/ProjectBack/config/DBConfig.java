@@ -16,8 +16,11 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.ProjectBack.model.Cart;
 import com.ProjectBack.model.Category;
+import com.ProjectBack.model.Orders;
 import com.ProjectBack.model.Product;
+import com.ProjectBack.model.ShippingAddress;
 import com.ProjectBack.model.Supplier;
 import com.ProjectBack.model.UserDetails;
 
@@ -49,6 +52,9 @@ public class DBConfig{
 		sessionFactBuilder.addAnnotatedClass(Category.class);
 		sessionFactBuilder.addAnnotatedClass(Product.class);
 		sessionFactBuilder.addAnnotatedClass(Supplier.class);
+		sessionFactBuilder.addAnnotatedClass(Cart.class);
+		sessionFactBuilder.addAnnotatedClass(ShippingAddress.class);
+		sessionFactBuilder.addAnnotatedClass(Orders.class);
 		
 		return sessionFactBuilder.buildSessionFactory();
 		
