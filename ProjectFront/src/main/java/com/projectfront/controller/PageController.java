@@ -34,6 +34,16 @@ ProductDAO productDAO;
 		return "index";
 	}
 	
+	@RequestMapping("/aboutUs")
+	public String aboutUs(){
+		return "aboutUs";
+	}
+	
+	@RequestMapping("/403Error")
+	public String error(){
+		return "403";
+	}
+	
 	@RequestMapping("/register")
 	public String registerd(){
 		return "register";
@@ -69,7 +79,11 @@ ProductDAO productDAO;
 		userDetails.setName(data.get("name"));
 		userDetails.setEnabled(true);
 		userDetails.setPassword(data.get("pass"));
-		userDetailsDAO.addUserDetailsDAO(userDetails);
+		try {
+			userDetailsDAO.addUserDetailsDAO(userDetails);
+		} catch (Exception e) {
+		
+		}
 		return "redirect:login";
 	}
 	@RequestMapping("/viewProductByCategory/{c_id}")

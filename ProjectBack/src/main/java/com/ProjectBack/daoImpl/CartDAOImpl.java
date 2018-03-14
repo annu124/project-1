@@ -24,9 +24,8 @@ public class CartDAOImpl implements CartDAO {
 
 	public List<Cart> getcartitems(String username) {
 		Session session = factory.openSession();
-		Query<Cart> query = session.createQuery("from cart where user.userName=:username and status=:status");
+		Query<Cart> query = session.createQuery("from Cart where user.username=:username");
 		query.setParameter("username", username);
-		query.setParameter("status", "U");
 		List<Cart> list = query.list();
 		session.close();
 		return list;
@@ -48,9 +47,8 @@ public class CartDAOImpl implements CartDAO {
 
 	public Cart checkCartItem(String username, int p_id) {
 		Session session = factory.openSession();
-		Query<Cart> query = session.createQuery("from cart where user.userName=:username and status=:status and pro.p_id=:p_id");
+		Query<Cart> query = session.createQuery("from Cart where user.username=:username and pro.id=:p_id");
 		query.setParameter("username", username);
-		query.setParameter("status", "U");
 		query.setParameter("p_id", p_id);
 		List<Cart> list = query.list();
 		for(Cart c:list)

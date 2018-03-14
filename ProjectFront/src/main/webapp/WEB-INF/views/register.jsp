@@ -1,75 +1,50 @@
 <%@include file="header.jsp" %>
-
-<div class="container-fliud">
-<form class="form-horizontal" action="${e}adduser" method="post" style="margin-top:0%;margin-bottom:0%;">
-<h1 style=" text-align:center; font-family:Forte; color:black ;"><b> Registration form</b></h1>
-<div class="form-group">
-    <label class="control-label col-sm-2" for="pwd" >Username:</label>
-    <div class="col-sm-10"> 
-      <input type="text" class="form-control" id="pwd" placeholder="Enter username" name="username">
-    </div>
+<br/>
+<div class="container-fluid" style=" width:100%; repeat:no-repeat; background-image:url('resources/images/fish.jpg') ">
+<div class="row">
+<div class="col-md-4 col-sm-4 col-xs-12"></div>
+<div class="col-md-4 col-sm-4 col-xs-12"> 
+<form class="form-container" action="${e}adduser" method="post" style="margin-top:0%;margin-bottom:0%;">
+<h1><center><b>REGISTER</b></center></h1>
+ <div class="form-group">
+    <label  for="pwd" >Username:</label>
+      <input required="" type="text" class="form-control" id="pwd" placeholder="Enter username" name="username">
   </div>
   
   <div class="form-group">
-    <label class="control-label col-sm-2" for="pwd" >Name:</label>
-    <div class="col-sm-10"> 
-      <input type="text" class="form-control" id="pwd" placeholder="Enter username" name="name">
-    </div>
+    <label  for="pwd" >Name:</label>
+      <input required="" type="text" class="form-control" id="pwd" placeholder="Enter username" name="name">
   </div>
 
   <div class="form-group">
-    <label class="control-label col-sm-2" for="email">Email:</label>
-    <div class="col-sm-10">
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-    </div>
+    <label  for="email">Email:</label>
+      <input required="" type="email" class="form-control" id="email" placeholder="Enter email" name="email">
   </div>
   <div class="form-group">
-    <label class="control-label col-sm-2" for="pwd">Contact number:</label>
-    <div class="col-sm-10"> 
-      <input type="tel" class="form-control" id="pwd" placeholder="contact no." name="tel">
-    </div>
+    <label  for="pwd">Contact number:</label>
+      <input required="" type="tel" class="form-control" id="pwd" placeholder="contact no." name="tel">
   </div>
 
 <div class="form-group">
-    <label class="control-label col-sm-2" for="pwd">Address:</label>
-    <div class="col-sm-10"> 
-      <textarea type="text" class="form-control" id="pwd" placeholder="Enter address" name="add"></textarea>
-    </div>
+    <label  for="pwd">Address:</label>
+      <textarea required="" max="255" type="text" class="form-control" id="pwd" placeholder="Enter address" name="add"></textarea>
   </div>
   
 
 <div class="form-group">
-    <label class="control-label col-sm-2" for="pwd">Password:</label>
-    <div class="col-sm-10"> 
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pass">
-    </div>
+    <label  for="pwd">Password:</label>
+      <input required="" type="password" class="form-control" id="pwd" placeholder="Enter password" name="pass">
   </div>
   
-  <div class="form-group"> 
-    <div class="col-sm-offset-2 col-sm-10">
-      <div class="checkbox">
-        <label><input type="checkbox" name="rpass"> Remember me </label>
-      </div>
-    </div>
-  </div>
- 
 
   <div class="form-group"> 
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-success" >
+      <button type="submit" class="btn btn-success btn-block" >
 Register</button>
-    </div>
     </div>
 </form>
 </div>
 
-</body>
-</html>
-
-
-
-   
- 
-
+</div></div>
+<br/><br/>
 <%@include file="footer.jsp" %>
 

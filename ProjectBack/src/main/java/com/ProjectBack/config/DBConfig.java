@@ -26,7 +26,7 @@ import com.ProjectBack.model.UserDetails;
 
 
 @Configuration
-@ComponentScan("abc.myProject")
+@ComponentScan("com")
 @EnableTransactionManagement
 public class DBConfig{
 	

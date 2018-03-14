@@ -42,14 +42,19 @@ return "redirect:/viewSupplier";
 @RequestMapping(value="/deleteSupplier/{sid}")
 public String deleteSupplier(@PathVariable int sid){
 Supplier supplier=supplierDAO.getSupplierById(sid);
-supplierDAO.deleteSupplier(supplier);
+try {
+	supplierDAO.deleteSupplier(supplier);
+} catch (Exception e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
 return "redirect:/viewSupplier";
 } 
 @RequestMapping(value="/updateSupplierById/{sid}")
 public ModelAndView updateSupplierByIdSupplier(@PathVariable int sid){
 ModelAndView m=new ModelAndView("updateSupplier");
 	Supplier supplier=supplierDAO.getSupplierById(sid);
-m.addObject("cat",supplier);
+m.addObject("sup",supplier);
 return m;
 } 
 

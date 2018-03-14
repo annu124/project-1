@@ -16,7 +16,7 @@ private	Product pro;
 	@ManyToOne
 private UserDetails user;
 private	String status;
-private	int quant;
+private	int quantity;
 public int getId() {
 	return id;
 }
@@ -40,9 +40,10 @@ public void setUser(UserDetails user) {
 public void setStatus(String status) {
 	this.status = status;
 }
-public int getQuant() {
-	return quant;
+public int getQuantity() {
+	return quantity;
 }
-public void setQuant(int quant) {
-	this.quant = quant;
-}}
+public void setQuantity(int quantity) {
+	this.quantity = quantity;
+}
+}

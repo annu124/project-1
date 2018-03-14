@@ -80,8 +80,19 @@ public ModelAndView updateProduct(@PathVariable int id){
 @RequestMapping("/deleteProduct/{id}")
 public ModelAndView deleteProduct(@PathVariable int id){
 	ModelAndView m=new ModelAndView("redirect:/viewProduct");
-	productDAO.deleteProduct(productDAO.getProduct(id));
+	try {
+		productDAO.deleteProduct(productDAO.getProduct(id));
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	return m;
 }
 
+@RequestMapping("/viewProductDetails/{id}")
+public ModelAndView getProductDetails(@PathVariable int id) {
+	ModelAndView m = new ModelAndView("viewProductDetails");
+	m.addObject("pro", productDAO.getProduct(id));
+	return m;
+}
 }

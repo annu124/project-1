@@ -29,9 +29,9 @@ CartDAO cartDAO;
 		details.setUsername(username);
 		cart=new Cart();
 		cart.setPro(product);
-		cart.setQuant(1);
+		cart.setQuantity(1);
 		cart.setUser(details);}
-		else{cart.setQuant(cart.getQuant()+1);}
+		else{cart.setQuantity(cart.getQuantity()+1);}
 		cartDAO.insertOrUpdateCart(cart);
 		return "redirect:/cart";
 	}
@@ -52,12 +52,12 @@ CartDAO cartDAO;
 		Cart cart=cartDAO.getcartitembyid(cartItemId);
 		switch(operation){
 		case '+':
-			cart.setQuant(cart.getQuant()+1);
+			cart.setQuantity(cart.getQuantity()+1);
 			cartDAO.insertOrUpdateCart(cart);
 			break;
 		case '-':
-			if(cart.getQuant()>1){
-				cart.setQuant(cart.getQuant()-1);
+			if(cart.getQuantity()>1){
+				cart.setQuantity(cart.getQuantity()-1);
 				cartDAO.insertOrUpdateCart(cart);
 			}
 			break;
